@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>{{!changeMode?'SignUp':'Login'}}</h2>
+<form  #form="ngForm" (ngSubmit)="forsubmit(form)" >
+    
+    <label for="email" >email</label>
+    <input type="text" name="email" ngModel email required>
+    <label for="password"> password</label>
+    <input type="password" name="password" ngModel required minlength="4">
+
+    <button type="submit" [disabled]="form.invalid">submit</button>
+    <p >{{!changeMode?'You dont have account?':'you have account?'}}<button class="register" (click)=" changelogins()">{{!changeMode?'signUp Here?':'LogIn Here'}}</button></p>
+</form>
+</div>
